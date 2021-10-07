@@ -25,7 +25,7 @@
 
 <style>
   .legend {
-    @apply text-gray-600 p-2 z-50 text-xs;
+    @apply text-gray-400 p-2 z-50 text-xs;
   }
 
   .legendspan {

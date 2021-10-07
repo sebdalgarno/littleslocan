@@ -108,12 +108,12 @@
 <div class="grid grid-cols-5 bg-black">
 	<div class="mt-5 col-span-2">
 		<div class="grid-rows-3">
-			<div class="row-span-1 text-center bg-black text-gray-400 px-8 mb-3">
-				<span class="text-2xl text-gray-500">75 years</span>
-				<span class="text-xl text-gray-500">of</span>
-				<span class="text-2xl text-gray-500">logging</span>
-				<span class="text-xl text-gray-700">in</span>
-				<span class="text-2xl text-gray-500">Little Slocan</span>
+			<div class="row-span-1 text-center bg-black text-gray-300 px-8 mb-3">
+				<span class="text-2xl text-gray-400">75 years</span>
+				<span class="text-xl text-gray-400">of</span>
+				<span class="text-2xl text-gray-400">logging</span>
+				<span class="text-xl text-gray-600">in</span>
+				<span class="text-2xl text-gray-400">Little Slocan</span>
 				<!-- <p class="text-md text-gray-700">Move the slider to go forward in time</p> -->
 				<!-- <p class="text-md text-gray-700">Hover over chart or map to view detailed info</p> -->
 				<br />
@@ -124,7 +124,7 @@
 					<div class="text-center flex justify-center">
 						<Button outline={false} caption={'-'} on:minus-year={minusYear} />
 						<div class="inline-block">
-							<p class="text-5xl text-gray-600">{year}</p>
+							<p class="text-5xl text-gray-500">{year}</p>
 						</div>
 						<Button outline={false} caption={'+'} on:add-year={addYear} />
 					</div>
@@ -151,7 +151,7 @@
 						<span class="text-2xl text-green-700">{logged_total}</span>
 						<span class="text-lg text-gray-700">hectares logged from</span>
 						<span class="text-2xl text-gray-500">1945</span>
-						<span class="text-lg text-gray-700">to</span>
+						<span class="text-lg text-gray-700">-</span>
 						<span class="text-2xl text-gray-500">{year}</span>
 					</div>
 					<div class="p-4">

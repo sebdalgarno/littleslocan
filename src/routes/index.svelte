@@ -5,6 +5,8 @@
 	import Slider from 'svelte-range-slider-pips';
 	import Chart from '$lib/Bchart.svelte';
 	import yearTotals from '../year_totals.json';
+	import planned from '../planned.json';
+
 	// import Content from '$lib/Content.svelte';
 	// import Modal from 'svelte-simple-modal';
 	import chroma from 'chroma-js';
@@ -24,9 +26,10 @@
 	}
 	let map_palette_single = map_palette[11];
 
+	let map_palette_planned = ['planned', '#E6007E'];
 	let map_palette_sg = ['sg', '#E6007E'];
 
-	let year = [1950];
+	let year = [1970];
 	let single = false;
 	let secondgrowth = false;
 
@@ -123,7 +126,7 @@
 					</div>
 
 					<div class="pl-20 w-10/12 -mt-2">
-						<Slider bind:values={year} min={1945} max={2022} pips step={1} pipstep={10} />
+						<Slider bind:values={year} min={1945} max={2021} pips step={1} pipstep={10} />
 					</div>
 					<div class="row-span-1 text-center bg-black text-gray-400 px-8">
 						<span class="text-2xl text-green-700">{logged_year}</span>
@@ -137,7 +140,7 @@
 						<span class="text-2xl text-gray-500">{year}</span>
 					</div>
 					<div class="p-4">
-						<Chart {year} {year_min} {data_total} {map_palette} {palette} />
+						<Chart {planned} {year} {year_min} {data_total} {map_palette} {palette} />
 					</div>
 					<div class="text-xs p-3">
 						<span class="text-gray-600 pr-1">developed by </span>
@@ -157,17 +160,16 @@
 
 	<div class="col-span-3">
 		<div
-			class=" absolute ml-1 sm:my-1  p-0 md:p-2 rounded-lg bg-black  text-gray-400"
-			style="z-index: 1; "
-		>
+			class=" absolute ml-1 sm:my-1  p-0 md:p-2 rounded-lg bg-black bg-opacity-75 text-gray-400"
+			style="z-index: 1; "		>
 			<Legend {palette} {single} {secondgrowth} {map_palette_single} {map_palette_sg} />
-			<div class="absolute invisible sm:visible my-1">
+			<!-- <div class="absolute invisible sm:visible my-1">
 				{#if !single}
 					<Button caption={'by year'} on:single-year={toggleSingle} />
 				{:else}
 					<Button caption={'all years'} on:single-year={toggleSingle} />
 				{/if}
-			</div>
+			</div> -->
 		</div>
 		<Map
 			year={year[0]}
@@ -175,7 +177,7 @@
 			{secondgrowth}
 			{map_palette}
 			{map_palette_single}
-			{map_palette_sg}
+			{map_palette_planned}
 			{bounds}
 		/>
 	</div>

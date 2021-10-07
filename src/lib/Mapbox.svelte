@@ -47,10 +47,15 @@
 
   let paint_property = (year) => {
     return [
+        "match",
+        ["string", ["get", "planned"]],
+        ...map_palette_planned,
+        [
           "match",
           ["-", year, ["number", ["get", "year"]]],
           ...map_palette,
           map_palette[1],
+        ],
       ]
   };
 

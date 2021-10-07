@@ -26,7 +26,7 @@
 	}
 	let map_palette_single = map_palette[11];
 
-	let map_palette_planned = ['planned', '#E6007E'];
+	let map_palette_planned = ["true", "#E6007E"];
 	let map_palette_sg = ['sg', '#E6007E'];
 
 	let year = [1970];

@@ -44,6 +44,7 @@
   function filterAccumulate() {
     map.setFilter("logged", ["<=", "year", year]);
   }
+  
 
   let paint_property = (year) => {
     return [

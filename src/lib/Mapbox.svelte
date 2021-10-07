@@ -21,8 +21,6 @@
   // export let map_palette_bare;
   export let bounds;
 
-  console.log(year[0])
-
   // let map_palette_sg = ["true", "white", "false", "black"];
 
   $: if (typeof map !== "undefined" && done) {

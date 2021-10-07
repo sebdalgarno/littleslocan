@@ -26,7 +26,7 @@
 	}
 	let map_palette_single = map_palette[11];
 
-	let map_palette_planned = ["true", "#E6007E"];
+	let map_palette_planned = ['true', '#E6007E'];
 	let map_palette_sg = ['sg', '#E6007E'];
 
 	let year = [1970];
@@ -51,6 +51,11 @@
 	let logged_total;
 	$: logged_total = numberWithCommas(sumValues(totals));
 
+	let planned_total;
+	planned_total = planned.filter(function (x) {
+		return x.year == 2021;
+	});
+
 	let logged_year;
 	$: if (data_year[0]) {
 		logged_year = numberWithCommas(data_year[0].area);
@@ -74,7 +79,6 @@
 	}
 
 	function toggleSecondgrowth() {
-		console.log('hi');
 		secondgrowth = !secondgrowth;
 	}
 
@@ -128,11 +132,22 @@
 					<div class="pl-20 w-10/12 -mt-2">
 						<Slider bind:values={year} min={1945} max={2021} pips step={1} pipstep={10} />
 					</div>
+
+					{#if year == 2021}
+						<div class="row-span-1 text-center bg-black text-gray-400 px-8">
+							<span class="text-2xl text-green-700">{planned_total[0].area}</span>
+							<span class="text-lg text-gray-700">hectares planned as of </span>
+							<span class="text-2xl text-gray-500">{year}</span>
+						</div>
+					{:else}
+						<div class="row-span-1 text-center bg-black text-gray-400 px-8">
+							<span class="text-2xl text-green-700">{logged_year}</span>
+							<span class="text-lg text-gray-700">hectares logged in</span>
+							<span class="text-2xl text-gray-500">{year}</span>
+						</div>
+					{/if}
+
 					<div class="row-span-1 text-center bg-black text-gray-400 px-8">
-						<span class="text-2xl text-green-700">{logged_year}</span>
-						<span class="text-lg text-gray-700">hectares logged in</span>
-						<span class="text-2xl text-gray-500">{year}</span>
-						<br />
 						<span class="text-2xl text-green-700">{logged_total}</span>
 						<span class="text-lg text-gray-700">hectares logged from</span>
 						<span class="text-2xl text-gray-500">1945</span>
@@ -161,7 +176,8 @@
 	<div class="col-span-3">
 		<div
 			class=" absolute ml-1 sm:my-1  p-0 md:p-2 rounded-lg bg-black bg-opacity-75 text-gray-400"
-			style="z-index: 1; "		>
+			style="z-index: 1; "
+		>
 			<Legend {palette} {single} {secondgrowth} {map_palette_single} {map_palette_planned} />
 			<!-- <div class="absolute invisible sm:visible my-1">
 				{#if !single}

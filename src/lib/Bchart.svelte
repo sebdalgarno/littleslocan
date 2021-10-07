@@ -24,8 +24,6 @@
 		return el.area;
 	});
 
-	$: console.log(update_totals);
-
 	$: update_labels = data_total.map(function (el) {
 		return el.year;
 	});

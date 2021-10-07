@@ -74,9 +74,9 @@
 	};
 
 	let options = {
-		// legend: {
-		//     display: false
-		//  },
+		legend: {
+		    display: false
+		 },
 		maintainAspectRatio: true,
 		responsive: true,
 		animation: false,

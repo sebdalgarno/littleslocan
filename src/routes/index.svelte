@@ -162,7 +162,7 @@
 		<div
 			class=" absolute ml-1 sm:my-1  p-0 md:p-2 rounded-lg bg-black bg-opacity-75 text-gray-400"
 			style="z-index: 1; "		>
-			<Legend {palette} {single} {secondgrowth} {map_palette_single} {map_palette_sg} />
+			<Legend {palette} {single} {secondgrowth} {map_palette_single} {map_palette_planned} />
 			<!-- <div class="absolute invisible sm:visible my-1">
 				{#if !single}
 					<Button caption={'by year'} on:single-year={toggleSingle} />

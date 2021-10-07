@@ -3,22 +3,23 @@
   export let single;
   export let secondgrowth;
   export let map_palette_single;
-  export let map_palette_sg;
+  export let map_palette_planned;
 
   let legend_palette = [
     { value: "0", color: palette[0] },
     { value: "15", color: palette[15] },
     { value: "30", color: palette[30] },
     { value: "45", color: palette[45] },
-    { value: ">60", color: palette[60] }
+    { value: ">60", color: palette[60] },
+    { value: "Planned", color: map_palette_planned[1]}
   ];
 
   let legend_single = [
     { value: "Harvested", color: map_palette_single }
   ];
 
-  let legend_sg = [
-    {value: "2nd Growth", color: map_palette_sg[1]}
+  let legend_planned = [
+    {value: "Planned", color: map_palette_planned[1]}
   ];
 </script>
 
@@ -56,13 +57,4 @@
     {/each}
   </div>
 {/if}
-{#if secondgrowth}
-  <div class="legend -my-3">
-    {#each legend_sg as { value, color }}
-      <div>
-        <span class="legendspan" style="background-color: {color}" />
-        {value}
-      </div>
-    {/each}
-  </div>
-  {/if}
+
